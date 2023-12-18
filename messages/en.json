@@ -1,0 +1,55 @@
+
+{
+  "header": {
+    "textlogoindex": "Cic Peron",
+    "textlogomodules": "Modules",
+    "linksmodule":  {
+      "home" : {
+          "url": "/modules", 
+          "text": "Home"
+        },
+      "chargeuser" : {
+        "url": "/modules/chargeuser",
+        "text": "Charge user"
+      },
+      "chargemodules" : {
+        "url": "/modules/chargemodules",
+        "text": "Charge modules"
+      },
+      "logout" : {
+        "url": "/",
+        "text": "Logout"
+      }
+    },
+    "linksindex" : {
+      "home" : {
+          "url": "/", 
+          "text": "Home"
+        },
+      "login" : {
+        "url": "/login",
+        "text": "Login"
+      },
+      "modules" : {
+        "url": "/modules",
+        "text": "Modules"
+      }
+    }
+  },
+  "chargeuser" : {
+    "tittle": "Complete the form to charge a new user",
+    "name": "Name",
+    "lastname" : "Last Name",
+    "email": "Email",
+    "dni": "DNI",
+    "address" : "Address",
+    "phone": "Phone",
+    "birthdate" : "Birthdate",
+    "submit": "Save user"
+  },
+  "hello": "Hello",
+  "welcome": "Hello {name}!",
+  "module": {
+    "title": "Module"
+  }
+}

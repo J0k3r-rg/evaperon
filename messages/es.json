@@ -1,0 +1,55 @@
+
+{
+  "header" : {
+    "textlogoindex" : "Cic Peron",
+    "textlogomodules" : "Modulos",
+    "linksmodule":  {
+      "home" : {
+          "url": "/modules", 
+          "text": "Inicio"
+        },
+      "chargeuser" : {
+        "url": "/modules/chargeuser",
+        "text": "Cargar usuario"
+      },
+      "chargemodules" : {
+        "url": "/modules/chargemodules",
+        "text": "Cargar modulos"
+      },
+      "logout" : {
+        "url": "/",
+        "text": "Cerrar session"
+      }
+    },
+    "linksindex" : {
+      "home" : {
+          "url": "/", 
+          "text": "Inicio"
+        },
+      "login" : {
+        "url": "/login",
+        "text": "Iniciar sesion"
+      },
+      "modules" : {
+        "url": "/modules",
+        "text": "Modulos"
+      }
+    }
+  },
+  "chargeuser" : {
+    "tittle": "Completa el formulario para cargar un nuevo usuario",
+    "name": "Nombre",
+    "lastname" : "Apellido",
+    "email": "Correo Electronico",
+    "dni": "DNI",
+    "address" : "Direccion",
+    "phone": "Telefono",
+    "birthdate" : "Fecha de Nacimiento",
+    "submit": "Guardar Usuario"
+  },
+  "hello": "Hola",
+  "welcome": "Bienvenido {name}!",
+  "module" : {
+    "title": "Modulo"
+  }
+}

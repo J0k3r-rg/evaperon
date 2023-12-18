@@ -1,0 +1,10 @@
+#configGlobal{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+#changeLang button{
+    border: 1px solid wheat;
+    padding: 10px;
+}
