@@ -1,6 +1,6 @@
 'use client';
 
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent, MouseEvent, useState } from 'react';
 import { useRouter, usePathname } from '@/navigation';
 import { useTransition } from 'react';
 import './switchLang.css'
@@ -11,7 +11,7 @@ export function Switch() {
   const pathname = usePathname();
   const [isPending, startTransition] = useTransition();
 
-  const changeLang = (e :  ChangeEvent<HTMLSelectElement>) =>{
+  const changeLang = (e :  React.ChangeEvent<any>) =>{
     const nextLocale = e.target.value;
     startTransition(() => {
       router.replace(pathname, {locale: nextLocale});

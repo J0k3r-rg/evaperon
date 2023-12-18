@@ -1,13 +1,16 @@
 "use client";
 import useAnimatedRouter from "@/app/hooks/useAnimatedRouter";
 import Link from "next/link";
-import React from "react";
+import React, { ReactNode } from "react";
 
 type Props = {
   href: string,
   children: React.ReactNode,
 };
-export default function AnimatedLink({ href, children, className, onClick } : props) {
+export default function AnimatedLink({ href, children, className, onClick } : 
+  {
+    href : string, children : ReactNode, className? : string, onClick? : Function
+  }) {
   const { animatedRoute } = useAnimatedRouter();
   return (
     <Link
