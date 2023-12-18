@@ -1,14 +1,11 @@
 'use client';
 import InputForm from "./InputForm";
-import { useFormState } from "react-dom";
-import { saveUser } from "@/app/lib/actions";
 import { DataInput } from "@/app/lib/definitions";
 
 export default function Form({ t }: {
     t: any
 }) {
     const initialState = { message: null, errors: {} };
-    const [state, dispatch] = useFormState(saveUser, initialState);
 
     const items : DataInput[] = [
         {
@@ -56,7 +53,7 @@ export default function Form({ t }: {
     ]
 
     return (
-        <form action={dispatch} className="flex flex-col items-center mt-6 bg-inherit">
+        <form className="flex flex-col items-center mt-6 bg-inherit">
             {
                 items.map((item, index) => {
                     return (
