@@ -42,8 +42,4 @@ export async function saveUser(prevState: State, formData: FormData) {
         };
     }
 
-    const user : DataModel = validatedFields.data;
-
-    console.log(user)
-
 }
