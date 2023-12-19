@@ -33,7 +33,41 @@
       "modules" : {
         "url": "/modules",
         "text": "Modulos"
+      },
+      "perfil" : {
+        "url": "/dashboard",
+        "text": "Mi panel"
       }
+    }
+  },
+  "dashboarduser" : {
+    "index" : {
+      "name" : "Inicio",
+      "url" : "/dashboard"
+    },
+    "food" : {
+      "name" : "Viveres",
+      "url" : "/foods"
+    },
+    "procedures" : {
+      "name" : "Tramites",
+      "url" : "/procedures"
+    },
+    "cardsocial" : {
+      "name" : "Tarjeta social",
+      "url" : "/card-social"
+    },
+    "workshops" : {
+      "name" : "Talleres",
+      "url" : "/workshops"
+    },
+    "registrations" : {
+      "name" : "Inscripciones",
+      "url" : "/registrations"
+    },
+    "logout" : {
+      "name" : "Cerrar sesión",
+      "url" : "/"
     }
   },
   "chargeuser" : {

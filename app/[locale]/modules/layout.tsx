@@ -1,20 +1,12 @@
-import type { Metadata } from 'next'
-import './global.css'
+import { ReactNode } from "react";
 
-export const metadata: Metadata = {
-    title: 'Module | Home',
-    description: '',
-  }
 
-export default function Layout({
-    children,
-  }: {
-    children: React.ReactNode
-  }) {
+export default function LayoutModules(
+    {children} : {children : ReactNode}
+){
     return (
         <>
-          {children}
+            {children}
         </>
     )
-  }
-  
+}

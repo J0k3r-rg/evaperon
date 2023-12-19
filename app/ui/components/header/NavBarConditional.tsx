@@ -6,11 +6,9 @@ import { usePathname } from "next/navigation";
 
 
 export default function NavBarConditional({
-    linksModule = [],
     linksIndex = [],
     locale
 }:{
-    linksModule?: LinkType[],
     linksIndex?: LinkType[],
     locale: string
 }) {
@@ -29,17 +27,6 @@ export default function NavBarConditional({
                         <NavBarMobile links={linksIndex} locale={locale} />
                     </div>
                 </>                 
-            }
-            {
-                pathname.startsWith('/' + locale + '/modules') &&
-                <>
-                    <div className='hidden md:block'>
-                        <NavBar links={linksModule} locale={locale} />
-                    </div>
-                    <div className='md:hidden'>
-                        <NavBarMobile links={linksModule} locale={locale} />
-                    </div>
-                </>
             }
         </>
     );

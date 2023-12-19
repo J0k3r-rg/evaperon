@@ -1,10 +1,9 @@
-import DashboardModules from "@/app/ui/components/dashboards/DashboardModules";
 
-export default function Page(){
 
+export default function PageModules(){
     return(
-        <main id="page" className="flex gap-6">
-            <DashboardModules />
-        </main>
+        <>
+            <h2>Page Modules</h2>
+        </>
     )
 }

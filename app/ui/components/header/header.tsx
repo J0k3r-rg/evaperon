@@ -15,7 +15,7 @@ export default function Header(){
         text: t(`linksmodule.${element}.text`),
     }));
 
-    const linksIndex  = Array.of('home', 'login','modules').map(element => ({
+    const linksIndex  = Array.of('home', 'login','modules','perfil').map(element => ({
         url: t(`linksindex.${element}.url`),
         text: t(`linksindex.${element}.text`),
     }));
@@ -30,7 +30,7 @@ export default function Header(){
                     <Image src="/imgs/logo.png" alt="logo" className="mx-3 my-3" width={300} height={100}/>
                 </AnimatedLink>
             </div>
-            <NavBarConditional linksModule={linksModule} linksIndex={linksIndex} locale={locale} />
+            <NavBarConditional linksIndex={linksIndex} locale={locale} />
         </header>
     )
 }

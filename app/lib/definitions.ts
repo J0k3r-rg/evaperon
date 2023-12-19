@@ -1,7 +1,14 @@
+import { ComponentClass, FunctionComponent } from "react";
 
 export type LinkType = {
     url: string,
     text: string
+}
+
+export type LinksDashboard = {
+    name : string, 
+    link: string , 
+    icon? : undefined | string | FunctionComponent<{ size: string; }> | ComponentClass<{ size: string; }, any>
 }
 
 export type DataInput = {
