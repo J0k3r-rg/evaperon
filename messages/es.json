@@ -18,7 +18,7 @@
       },
       "logout" : {
         "url": "/",
-        "text": "Cerrar session"
+        "text": "Cerrar sesión"
       }
     },
     "linksindex" : {
@@ -42,7 +42,7 @@
     "lastname" : "Apellido",
     "email": "Correo Electronico",
     "dni": "DNI",
-    "address" : "Direccion",
+    "address" : "Domicilio",
     "phone": "Telefono",
     "birthdate" : "Fecha de Nacimiento",
     "submit": "Guardar Usuario"

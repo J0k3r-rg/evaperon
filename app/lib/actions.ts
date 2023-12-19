@@ -1,6 +1,6 @@
 'use server'
 import { z } from "zod";
-import { DataModel } from "./definitions";
+import { UserModel } from "./definitions";
 
 export type State = {
     errors?: {
@@ -41,5 +41,9 @@ export async function saveUser(prevState: State, formData: FormData) {
             message: 'Missing Fields. Failed to Create Invoice.',
         };
     }
+
+    const user : UserModel = validatedFields.data;
+
+    console.log(user)
 
 }

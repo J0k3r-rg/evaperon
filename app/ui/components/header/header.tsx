@@ -10,7 +10,7 @@ export default function Header(){
     const locale = useLocale()
     const t = useTranslations('header');
 
-    const linksModule  = Array.of('home', 'chargeuser', 'chargemodules', 'logout').map(element => ({
+    const linksModule  = Array.of('logout').map(element => ({
         url: t(`linksmodule.${element}.url`),
         text: t(`linksmodule.${element}.text`),
     }));

@@ -22,6 +22,16 @@ export type DataModel = {
     submit : string
 }
 
+export type UserModel = {
+    name: string,
+    lastname: string,
+    email: string,
+    dni: string,
+    address : string,
+    phone : string
+}
+
+
 export interface ExtendedDocument extends Document {
     startViewTransition?: any;
   }
