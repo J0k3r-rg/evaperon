@@ -40,7 +40,7 @@ export default function Sidebar({ isOpen, setIsOpen, links }: { isOpen: string |
     }
 
     return (
-        <div className={`${isOpen ? 'w-72' : 'w-16'} relative bg-blue-600 dark:bg-gray-800 duration-500 min-h-screen px-4`}>
+        <div className={`${isOpen ? 'w-72' : 'w-16'} relative bg-blue-300 dark:bg-gray-800 duration-500 min-h-screen px-4`}>
             <div className="flex justify-end mt-4">
                 <FaArrowAltCircleRight size={23} className={`${isOpen && 'rotate-180'} cursor-pointer duration-500 delay-500`} onClick={closeSidebar} />
             </div>
@@ -49,7 +49,7 @@ export default function Sidebar({ isOpen, setIsOpen, links }: { isOpen: string |
                     updatedLinks.map((link, index) => {
                         return (
                             <Link href={link.link} key={index}
-                                className='flex group dark:text-white items-center text-sm gap-3.5 font-medium px-2 py-4 hover:bg-gray-400 rounded-md duration-300'>
+                                className='flex group dark:text-white items-center text-lg gap-3.5 font-bold px-2 py-4 hover:bg-gray-400 rounded-md duration-300'>
                                 <div>{React.createElement(link.icon, { size: '20' })}</div>
                                 <h2
                                     style={{
