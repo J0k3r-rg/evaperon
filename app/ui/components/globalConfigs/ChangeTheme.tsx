@@ -1,5 +1,6 @@
 'use client'
 import { useState, useEffect } from "react";
+import { MdDarkMode, MdLightMode } from "react-icons/md";
 
 
 export default function ChangeTheme() {
@@ -22,12 +23,24 @@ export default function ChangeTheme() {
     }, [theme]);
 
     const changeTheme = () => {
-        setTheme(theme === 'light'? 'dark' : 'light');
+        setTheme(theme === 'light' ? 'dark' : 'light');
     }
 
     return (
-        <div>
-            <button onClick={changeTheme}>Change Theme</button>
-        </div>
+        <>
+            <div className={`flex p-1 w-20 m-auto rounded-full bg-slate-500`}>
+                <button onClick={changeTheme} className={`${theme === 'dark' ? 'ml-10' : 'ml-0'} `}>
+                    {theme === 'dark' ?
+                        <MdDarkMode size={32}
+                            className={`bg-gray-200 rounded-full`}
+                        />
+                        :
+                        <MdLightMode size={32}
+                            className={`bg-gray-200 rounded-full`}
+                        />
+                    }
+                </button>
+            </div>
+        </>
     );
 }

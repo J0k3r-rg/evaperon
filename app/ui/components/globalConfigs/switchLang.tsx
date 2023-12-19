@@ -1,30 +1,51 @@
 'use client';
 
-import { ChangeEvent, MouseEvent, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter, usePathname } from '@/navigation';
 import { useTransition } from 'react';
 import './switchLang.css'
 
 export function Switch() {
-
   const router = useRouter();
   const pathname = usePathname();
   const [isPending, startTransition] = useTransition();
 
-  const changeLang = (e :  React.ChangeEvent<any>) =>{
-    const nextLocale = e.target.value;
+  const [lang, setLang] = useState(() => {
+    if (typeof window !== 'undefined' && window.localStorage) {
+      return localStorage.getItem('lang') || 'es';
+    }
+    return 'en';
+  });
+  const changeLang = () => {
+    setLang(lang === 'en' ? 'es' : 'en');
+    localStorage.setItem('lang', lang === 'en' ? 'es' : 'en');
     startTransition(() => {
-      router.replace(pathname, {locale: nextLocale});
+      router.replace(pathname, { locale: lang });
     });
   }
 
   return (
-    <div id='changeLang'>
-      <button className="text-gray-950 dark:text-slate-300" type="button" value={'en'} onClick={e => changeLang(e)}>
-        EN
-      </button>
-      <button className="text-gray-950 dark:text-slate-300" type="button" value={'es'} onClick={e => changeLang(e)}>
-        ES
+    <div className="px-4 py-1">
+      <button
+        className="flex flex-row text-gray-950 dark:text-slate-300" 
+        type="button"
+        onClick={changeLang}
+      >
+        <div
+          className={`bg-white w-10 h-10 absolute mt-3 duration-500 ${lang === 'en' ? 'ml-0.5 rounded-l-md' : 'ml-12 rounded-r-md'}`}
+        >
+
+        </div>
+        <span className='border-2 p-2 border-black my-2 font-bold text-xl rounded-l-md'>
+          {
+            'ES'
+          }
+        </span>
+        <span className='border-2 p-2 border-black my-2 font-bold text-xl rounded-r-md'>
+          {
+            'EN'
+          }
+        </span>
       </button>
     </div>
   );

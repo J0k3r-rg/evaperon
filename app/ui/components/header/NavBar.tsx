@@ -19,6 +19,7 @@ export default function NavBar(
                             <AnimatedLink href={ '/'+ locale + element.url}
                                 className={clsx(
                                     'text-xl border-1 rounded-full border-gray-800 pt-2 pb-2 pr-5 pl-5 '+
+                                    'dark:text-white '+
                                     'hover:text-gray-100 hover:bg-slate-800 dark:hover:text-gray-900 dark:hover:bg-slate-300 sm:bg-none',
                                     {
                                         'bg-slate-800 dark:bg-gray-200 text-slate-100 dark:text-slate-800': pathname === '/'+ locale + element.url,

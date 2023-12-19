@@ -5,8 +5,8 @@ import { LinksDashboard } from "@/app/lib/definitions";
 
 export default function DashboardUser({links } : {links : LinksDashboard[]}){
     const [isOpen, setIsOpen] = useState(() => {
-        if (localStorage.getItem('isOpenSidebar')){
-            return localStorage.getItem('isOpenSidebar') === 'true'? true : false
+        if (typeof window !== 'undefined' && window.localStorage){
+            return localStorage.getItem('isOpenSidebar') || true
         }
         return false
     });
@@ -14,7 +14,7 @@ export default function DashboardUser({links } : {links : LinksDashboard[]}){
     return(
         <>
             <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} links={links} />
-            <div className="relative">
+            <div className="relative pt-14 pl-2">
                 <h2 className="font-bold text-4xl">Dashboard User</h2>
             </div>
         </>

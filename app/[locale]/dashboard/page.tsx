@@ -17,7 +17,7 @@ export default function Page(){
         {name : t('logout.name'), link:`/${locale}/`}
     ]
     return(
-        <main id="page" className="flex min-h-screen gap-6">
+        <main id="page" className="flex min-h-screen gap-6 dark:bg-slate-700">
             <DashboardUser links={links} />
         </main>
     )
