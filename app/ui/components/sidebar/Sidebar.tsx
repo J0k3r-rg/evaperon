@@ -13,7 +13,7 @@ export default function Sidebar({ isOpen, setIsOpen, links }: { isOpen: string |
         if (localStorage.getItem('isOpenSidebar')){
             setIsOpen( localStorage.getItem('isOpenSidebar') === 'true' ? true : false )
         }
-    },[])
+    },[isOpen])
 
     const icons = [
         FaHome,

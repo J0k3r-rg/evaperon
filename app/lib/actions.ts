@@ -1,49 +1,20 @@
 'use server'
-import { z } from "zod";
-import { UserModel } from "./definitions";
+import { signIn } from "next-auth/react"
+import { redirect } from "next/navigation"
 
-export type State = {
-    errors?: {
-        name?: string[];
-        lastmane?: string[];
-        email?: string[];
-        dni?: string[];
-        address? : string[];
-        phone?: string[];
-    };
-    message?: string | null;
-};
+export const login = async ( formData: FormData ) => {
+    console.log(formData.get('username'),formData.get('password'))
+    const nextResponseAuth = await signIn(
+        "credentials",
+        {
+            username : formData.get('username'),
+            password  : formData.get('password')
+        }
+    )
 
-const FormSchema = z.object({
-    name: z.string(),
-    lastname: z.string(),
-    email: z.string(),
-    dni: z.string(),
-    address: z.string(),
-    phone: z.string()
-})
-
-const CreateUser = FormSchema.omit({})
-
-export async function saveUser(prevState: State, formData: FormData) {
-    const validatedFields = CreateUser.safeParse({
-        name: formData.get('name'),
-        lastname: formData.get('lastname'),
-        email: formData.get('email'),
-        dni: formData.get('dni'),
-        address: formData.get('address'),
-        phone: formData.get('phone')
-    });
-
-    if (!validatedFields.success) {
-        return {
-            errors: validatedFields.error.flatten().fieldErrors,
-            message: 'Missing Fields. Failed to Create Invoice.',
-        };
+    if (nextResponseAuth?.error){
+        return;
     }
 
-    const user : UserModel = validatedFields.data;
-
-    console.log(user)
-
+    redirect('en/dashboard')
 }

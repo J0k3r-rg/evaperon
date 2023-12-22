@@ -27,7 +27,7 @@ export default function Header(){
                 }>
             <div>
                 <AnimatedLink href="/">
-                    <Image src="/imgs/logo.png" alt="logo" className="mx-3 my-3" width={300} height={100}/>
+                    <Image src="/imgs/logo.png" alt="logo" className="mx-3 my-3" width={300} height={0}/>
                 </AnimatedLink>
             </div>
             <NavBarConditional linksIndex={linksIndex} locale={locale} />

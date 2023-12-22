@@ -3,6 +3,8 @@ import { notFound } from 'next/navigation'
 import GlobalConfigs from '@/app/ui/components/globalConfigs/GlobalConfigs'
 import '@/app/ui/globals.css'
 import Header from "@/app/ui/components/header/header";
+import SessionAuthProvider from '../hooks/providers/SessionAuthProvider';
+
 
 export const metadata: Metadata = {
   title: 'Home',
@@ -16,16 +18,18 @@ export default function RootLayout({
 }: {
   children: React.ReactNode,
   params: {
-    locale : string
+    locale: string
   }
 }) {
   if (!locales.includes(params.locale as any)) notFound();
   return (
     <html lang={params.locale}>
       <body>
-        <Header />
-        {children}
-        <GlobalConfigs />
+        <SessionAuthProvider>
+          <Header />
+          {children}
+          <GlobalConfigs />
+        </SessionAuthProvider>
       </body>
     </html>
   )
