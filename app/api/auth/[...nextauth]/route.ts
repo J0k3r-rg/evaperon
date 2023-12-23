@@ -11,8 +11,10 @@ const handler = NextAuth({
         password: { label: "Password", type: "password" }
       },
       async authorize(credentials, req) {
+        const url = `${process.env.NEXTAUTH_URL}/login`
+        console.log(url)
         const res = await fetch(
-          `${process.env.NEXT_PUBLIC_BACKEND_URL}/login`,
+          url,
           {
             method : 'POST',
             body : JSON.stringify({
