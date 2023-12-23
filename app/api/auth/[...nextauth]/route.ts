@@ -11,7 +11,7 @@ const handler = NextAuth({
         password: { label: "Password", type: "password" }
       },
       async authorize(credentials, req) {
-        const url = `${process.env.NEXTAUTH_URL}/login`
+        const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/login`
         console.log(url)
         const res = await fetch(
           url,
@@ -36,20 +36,12 @@ const handler = NextAuth({
     })
   ],
   callbacks : {
-    
     async jwt({token, user}){
       return {...token, ...user}
     },
     async session({session , token}){
       session.user = token as any;
       return session;
-    },
-    async redirect({ url, baseUrl }) {
-      // Allows relative callback URLs
-      if (url.startsWith("/")) return `${baseUrl}${url}`
-      // Allows callback URLs on the same origin
-      else if (new URL(url).origin === baseUrl) return url
-      return baseUrl
     }
   },
   pages : {
