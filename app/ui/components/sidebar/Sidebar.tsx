@@ -12,12 +12,6 @@ export default function Sidebar({ isOpen, setIsOpen, links }: { isOpen: string |
 
     const {data : session} = useSession();
 
-    useEffect(() => {
-        if (localStorage.getItem('isOpenSidebar')) {
-            setIsOpen(localStorage.getItem('isOpenSidebar') === 'true' ? true : false)
-        }
-    }, [isOpen])
-
     const icons = [
         FaHome,
         SiJusteat,
@@ -39,11 +33,10 @@ export default function Sidebar({ isOpen, setIsOpen, links }: { isOpen: string |
 
     const closeSidebar = () => {
         setIsOpen(!isOpen);
-        localStorage.setItem('isOpenSidebar', (!isOpen).toString());
     }
 
     return (
-        <div className={`${isOpen ? 'w-72' : 'w-16'} relative bg-blue-300 dark:bg-gray-800 duration-500 min-h-screen px-4`}>
+        <div className={`${isOpen ? 'w-72' : 'w-16'} absolute bg-blue-300 dark:bg-gray-800 duration-500 min-h-screen px-4`}>
             <div className="flex justify-end mt-4">
                 <FaArrowAltCircleRight size={23} className={`${isOpen && 'rotate-180'} cursor-pointer duration-500 delay-500`} onClick={closeSidebar} />
             </div>

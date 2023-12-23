@@ -10,13 +10,8 @@ export default function NavBar(
     {links : LinkType[], locale : string}
 ) {
 
-    const {status} = useSession();
-    console.log(status)
-    if (status === 'authenticated'){
-        links = links.filter(link => link.url != '/login')
-    }
-
     const pathname = usePathname();
+
     return (
         <ul className="flex flex-row">
             {
@@ -29,7 +24,7 @@ export default function NavBar(
                                     'dark:text-white '+
                                     'hover:text-gray-100 hover:bg-slate-800 dark:hover:text-gray-900 dark:hover:bg-slate-300 sm:bg-none',
                                     {
-                                        'bg-slate-800 dark:bg-gray-200 text-slate-100 dark:text-slate-800': pathname === '/'+ locale + element.url,
+                                        'bg-slate-800 dark:bg-gray-200 text-slate-100 dark:text-slate-800': pathname === `/${locale}${element.url === '/' ? '' : element.url}`,
                                     }
                                     )}>
                                 {element.text}

@@ -22,7 +22,7 @@ export default function Header(){
 
     return (
         <header className={
-                "pageHeader flex items-center justify-between "+ 
+                "pageHeader flex items-center justify-between relative "+ 
                 vars.headerligth + ' ' + vars.headerdark
                 }>
             <div>

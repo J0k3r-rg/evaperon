@@ -42,7 +42,7 @@ export default function NavBarMobile(
                                             className={clsx(
                                                 "block px-6 py-4 text-md text-gray-700 hover:bg-gray-300",
                                                 {
-                                                    "hover:rounded-b-xl" : element.text ===  'Logout'
+                                                    "hover:rounded-b-xl" : element.url ===  '/dashboard'
                                                 },
                                                 {
                                                     'bg-slate-800 dark:bg-gray-200 text-slate-100 dark:text-slate-800 rounded-t-xl': pathname === '/'+ locale + element.url,

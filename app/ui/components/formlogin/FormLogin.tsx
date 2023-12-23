@@ -16,7 +16,7 @@ export default function FormLogin() {
 
   const login = async (e: React.FormEvent) => {
     e.preventDefault();
-    const res = await signIn("credentials", { username: form.username, password: form.password, redirect: true, callbackUrl: '/redirect' })
+    const res = await signIn("credentials", { username: form.username, password: form.password, redirect: true, callbackUrl: '/dashboard' })
   }
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
