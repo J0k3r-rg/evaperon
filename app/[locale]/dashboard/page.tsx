@@ -13,8 +13,7 @@ export default function Page(){
         {name : t('procedures.name'), link: `/${locale}/`  },
         {name : t('cardsocial.name'), link: `/${locale}/`},
         {name : t('workshops.name'), link: `/${locale}/` },
-        {name : t('registrations.name'), link: `/${locale}/` },
-        {name : t('logout.name'), link:`/${locale}/`}
+        {name : t('registrations.name'), link: `/${locale}/` }
     ]
     return(
         <main id="page" className="flex min-h-screen gap-6 dark:bg-slate-700">

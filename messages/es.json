@@ -64,10 +64,6 @@
     "registrations" : {
       "name" : "Inscripciones",
       "url" : "/registrations"
-    },
-    "logout" : {
-      "name" : "Cerrar sesión",
-      "url" : "/"
     }
   },
   "chargeuser" : {

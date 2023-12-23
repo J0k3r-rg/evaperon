@@ -7,7 +7,7 @@ import { useState } from "react";
 
 export default function GlobalConfigs(){
 
-    const [openConfigs, setOpenConfigs] = useState(false)
+    const [openConfigs, setOpenConfigs] = useState(true)
 
     return (
         <div id="configGlobal">

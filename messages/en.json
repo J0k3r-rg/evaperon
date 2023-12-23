@@ -64,10 +64,6 @@
     "registrations" : {
       "name" : "Registrations",
       "url" : "/registrations"
-    },
-    "logout" : {
-      "name" : "Logout",
-      "url" : "/"
     }
   },
   "chargeuser" : {

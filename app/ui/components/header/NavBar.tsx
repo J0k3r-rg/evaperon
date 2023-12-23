@@ -3,11 +3,18 @@ import AnimatedLink from "@/app/ui/components/animatedLink";
 import clsx from "clsx";
 import { LinkType } from "@/app/lib/definitions";
 import { usePathname } from "next/navigation";
+import { useSession } from "next-auth/react";
 
 export default function NavBar(
     {links, locale}:
     {links : LinkType[], locale : string}
 ) {
+
+    const {status} = useSession();
+    console.log(status)
+    if (status === 'authenticated'){
+        links = links.filter(link => link.url != '/login')
+    }
 
     const pathname = usePathname();
     return (

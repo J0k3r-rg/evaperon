@@ -5,15 +5,18 @@ import { SiJusteat, SiGoogleclassroom } from "react-icons/si";
 import { AiOutlineDeliveredProcedure } from "react-icons/ai";
 import { FaCcMastercard, FaHome, FaArrowAltCircleRight } from "react-icons/fa";
 import { IoCreateSharp, IoLogOut } from "react-icons/io5";
+import { signOut,useSession } from 'next-auth/react';
 
 
 export default function Sidebar({ isOpen, setIsOpen, links }: { isOpen: string | boolean, setIsOpen: Function, links: LinksDashboard[] }) {
 
+    const {data : session} = useSession();
+
     useEffect(() => {
-        if (localStorage.getItem('isOpenSidebar')){
-            setIsOpen( localStorage.getItem('isOpenSidebar') === 'true' ? true : false )
+        if (localStorage.getItem('isOpenSidebar')) {
+            setIsOpen(localStorage.getItem('isOpenSidebar') === 'true' ? true : false)
         }
-    },[isOpen])
+    }, [isOpen])
 
     const icons = [
         FaHome,
@@ -36,7 +39,7 @@ export default function Sidebar({ isOpen, setIsOpen, links }: { isOpen: string |
 
     const closeSidebar = () => {
         setIsOpen(!isOpen);
-        localStorage.setItem('isOpenSidebar',(!isOpen).toString());
+        localStorage.setItem('isOpenSidebar', (!isOpen).toString());
     }
 
     return (
@@ -67,6 +70,22 @@ export default function Sidebar({ isOpen, setIsOpen, links }: { isOpen: string |
                         )
                     })
                 }
+                <button onClick={() => signOut()}
+                        className='flex group dark:text-white items-center text-lg gap-3.5 font-bold px-2 py-4 hover:bg-gray-400 rounded-md duration-300'>
+                    <div>{React.createElement(IoLogOut, { size: '20' })}</div>
+                    <h2
+                        style={{
+                            transitionDelay: `${updatedLinks.length + 3}00ms`
+                        }}
+                        className={`whitespace-pre duration-500 
+                                    ${!isOpen && 'opacity-0 translate-x-28 overflow-hidden'}`}>
+                        Logout
+                    </h2>
+                    <h2
+                        className={`${isOpen && 'hidden'} absolute left-48 bg-blue-300 font-semibold whitespace-pre text-gray-950 rounded-md drop-shadow-lg px-0 py-0 w-0 overflow-hidden group-hover:px-2 group-hover:py-1 group-hover:left-14 group-hover:duration-300 group-hover:w-fit`}>
+                        Logout
+                    </h2>
+                </button>
             </div>
         </div>
     )
